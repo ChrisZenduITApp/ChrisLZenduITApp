@@ -1,0 +1,12 @@
+[build]
+  publish = "dist/chris-zenduit/browser"
+  command = "npm run build"
+
+[[plugins]]
+  package = "@netlify/angular-runtime"
+
+# Add this section to enable SPA routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
