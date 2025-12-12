@@ -1,0 +1,43 @@
+<table>
+    <tbody>
+        @for (report of reports; track report.id) {
+            <tr>
+                <td>
+                    <img src="assets/svg_report_icon.svg" class="report-icon-img" alt="">
+                    <span class="report-name">{{ report.name }}</span>
+                </td>
+                <td>
+                    <span class="cell-prefix">Created:</span>
+                    <span class="report-detail">{{ report.createdDate }}</span>
+                </td>
+                <td>
+                    <span class="cell-prefix">Modified:</span>
+                    <span class="report-detail">{{ report.modifiedDate}}</span>
+                </td>
+                <td>
+                    <span class="cell-prefix">Owner:</span>
+                    <span class="report-detail">{{ report.ownerEmail}}</span>
+                </td>
+                <td>
+                    <span class="cell-prefix">Form:</span>
+                    <span class="report-form-type">{{ report.associatedForm}}</span>
+                </td>
+                <td>
+                    <button class="delete-button" (click)="onDelete(report.id)">
+                        <img src="assets/svg_garbage_can.svg" class="action-icon" alt="Delete">
+                    </button>
+                    <button class="edit-button" disabled>
+                        <img src="assets/svg_edit_button.svg" class="action-icon" alt="Edit functionality disabled">
+                    </button>
+                </td>
+            </tr>
+        }
+        @empty {
+            <tr>
+                <td colspan="6" class="no-reports-found">
+                    No reports found.
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

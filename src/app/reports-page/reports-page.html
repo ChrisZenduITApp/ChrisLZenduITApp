@@ -1,0 +1,68 @@
+<main class="reports-page">
+    <h1 class="page-title">All Reports</h1>
+
+    <div class="controls-bar">
+        <div class="search-bar">
+            <img src="/assets/svg_search_icon.svg" class="search-icon" alt="Search">
+            <input
+                type="text"
+                placeholder="Search..."
+                [(ngModel)]="searchTerm"
+                (input)="applyFiltersAndSort()"
+            >
+        </div>
+        <div>
+            <button class="add-new-button">
+                <span class="plus-sign">+</span>Add new Report
+            </button>
+            <span class="sort-label">Sort by:</span>
+            <select class="selector"
+                [(ngModel)]="sortOrder"
+                (change)="applyFiltersAndSort()">
+                <option value="Newest">Newest</option>
+                <option value="Oldest">Oldest</option>
+            </select>
+        </div>
+        
+    </div>
+
+    <app-reports-table
+        [reports]="displayReports"
+        (deleteRequest)="confirmAndDelete($event)">
+    </app-reports-table>
+
+     <div class="pagination-footer">
+        <span class="record-summary">
+            {{ ((currentPage - 1) * pageSize) + 1 }} - {{ (currentPage * pageSize) > totalFilteredRecords ? totalFilteredRecords: currentPage * pageSize}}
+            of {{ totalFilteredRecords }} History Records
+        </span>
+        <div class="page-controls">
+            <button
+                class="carrot-btn"
+                (click)="goToPage(currentPage - 1)"
+                [class.disabled]="currentPage === 1"
+                aria-label="Previous Page">
+                &lt;
+            </button>
+            @for (page of getVisiblePages(); track $index) {
+                @if (page === '...') {
+                    <span class="ellipsis-spacer">...</span>
+                } @else {
+                    <button
+                        class="page-btn"
+                        [class.active]="currentPage === page"
+                        (click)="goToPage(+page)">
+                        {{ page }}
+                    </button>
+                }
+            }
+            <button
+                class="carrot-btn"
+                (click)="goToPage(currentPage + 1)"
+                [class.disabled]="currentPage === getTotalPages()"
+                aria-label="Next Page">
+                &gt;
+            </button>
+        </div>
+     </div>
+</main>

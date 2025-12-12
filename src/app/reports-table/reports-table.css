@@ -1,0 +1,105 @@
+/* --- Layout --- */
+
+table {
+    width: 100%;
+    border-spacing: 0 15px;
+    margin-top: 0;
+}
+
+td {
+    padding: 20px 15px;
+    font-size: 0.95em;
+    border: 1px solid #ddd;
+    border-left: none;
+    border-right: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+td:first-child {
+    border-left: 1px solid #ddd;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+td:last-child {
+    border-right: 1px solid #ddd;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.action-cell {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    padding: 5px;
+}
+
+/* --- Cell Content --- */
+
+.report-icon-img {
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.report-name {
+    font-weight: bold;
+}
+
+.report-form-type {
+    font-weight: bold;
+    color: rgb(0, 128, 208);
+}
+
+.cell-prefix {
+    font-size: 0.85em;
+    color: rgb(184, 185, 188);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.no-reports-found {
+    text-align: center;
+    color: #777;
+}
+
+/* --- Table Actions --- */
+
+.action-icon {
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+}
+
+.delete-button, .edit-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+tr:hover {
+    background-color: #F1F5F8;
+}
+
+tr:hover td {
+    border-color: #2188D9;
+}
+
+tr:hover .delete-button,
+tr:hover .edit-button,
+.delete-button:focus,
+.edit-button:focus {
+    opacity: 1;
+}
+
+.delete-button:hover, .edit-button:hover {
+    transform: scale(1.1);
+}
+
+.edit-button {
+    margin-right: -40px;
+}

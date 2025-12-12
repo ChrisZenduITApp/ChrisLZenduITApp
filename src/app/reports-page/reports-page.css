@@ -1,0 +1,148 @@
+/* --- Layout & Title --- */
+
+.reports-page {
+    padding: 0 35px;
+}
+
+.page-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* --- Controls Bar --- */
+
+.controls-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.search-bar {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden; /* Clips the content to maintain visual border radius. */
+    align-items: center;
+    max-width: 450px;
+    width: 100%;
+    height: 45px;
+    gap: 10px;
+}
+
+.search-bar input {
+    border: none;
+    line-height: normal;
+    font-size: 0.9rem;
+}
+
+.search-bar input:focus {
+    outline: none;
+}
+
+.search-icon {
+    width: 30px;
+    height: 30px;
+    margin-left: 8px;
+}
+
+.add-new-button {
+    font-size: 1rem;
+    background-color: rgb(0, 128, 208);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin: 30px;
+}
+
+.add-new-button:hover {
+    background-color: #0056b3;
+}
+
+.plus-sign {
+    font-size: 1.5em;
+    margin-right: 10px;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+.sort-label {
+    font-weight: 300;
+    color: #777;
+    font-size: 1rem;
+}
+
+.selector {
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    background-color: white;
+    padding: 8px 15px 0 2px;
+    cursor: pointer;
+    appearance: none;
+}
+
+.selector:focus {
+    outline: none;
+}
+
+/* --- Pagination Footer --- */
+
+.pagination-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.record-summary {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.page-controls {
+    display: flex;
+    gap: 5px;
+}
+
+/* Styles shared by all pagination buttons. */
+.page-btn, .carrot-btn {
+    padding: 5px 9px;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+.page-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.page-btn.active {
+    color: #3D97DE;
+    border-color: #3D97DE;
+}
+
+/* Styles specific to the arrows. */
+.carrot-btn {
+    color: #B8B9BC;
+}
+
+.carrot-btn.disabled {
+    color: #D0D0D2;
+    background-color: #ECECED;
+    border-color: #ECECED;
+    cursor: default; /* Cursor is changed to indicate a disabled state. */
+}
+
+.ellipsis-spacer {
+    border: 1px solid #ccc;
+    padding: 5px 9px;
+    border-radius: 4px;
+}
