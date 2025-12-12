@@ -4,8 +4,6 @@ This is the front-end project I built for the take-home, mainly focusing on the 
 
 ## 🏃 Local Setup and Running
 
-The repository URL is: `https://github.com/ChrisZenduITApp/ChrisZenduITApplication`
-
 This project uses the Angular framework. I use the Angular command line interface (`ng`) for managing and running the project.
 
 ### Prerequisites
@@ -17,11 +15,9 @@ You need to have the Angular CLI installed globally or locally, along with [Node
 1.  **Get the code:**
 
     ```bash
-    git clone https://github.com/ChrisZenduITApp/ChrisZenduITApplication
-    cd ChrisZenduITApplication
+    git clone https://github.com/ChrisZenduITApp/ChrisLZenduITApp
+    cd ChrisLZenduITApp
     ```
-
-    *(Note: The actual project files are nested within the folder structure `chriszenduitapp/chriszenduitapplication/ChrisZenduITApplication-33e463c51ddc9c7c87266a76e62c228f0e161d8f/`, but the `npm install` command should be run from the outer directory that contains `package.json`.)*
 
 2.  **Install dependencies:**
 
