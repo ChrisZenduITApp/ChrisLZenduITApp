@@ -99,7 +99,3 @@ tr:hover .edit-button,
 .delete-button:hover, .edit-button:hover {
     transform: scale(1.1);
 }
-
-.edit-button {
-    margin-right: -40px;
-}
